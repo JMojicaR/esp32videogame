@@ -1,16 +1,16 @@
 #include <WiFi.h>
 
 WiFiServer server(2020);
-const byte led_pin = 5;
-const char* ssid = "your wifi ssid";
-const char* password = "your wifi password";
+const byte led_pin = 14;
+const char* ssid = "your-ssid";
+const char* password = "your-password";
 
 void setup()
 {
     pinMode(led_pin, OUTPUT);
     Serial.begin(115200);
     WiFi.mode(WIFI_STA);
-    delay(2000);
+    delay(300);
     Serial.println("Conectando a red wifi...");
     WiFi.begin(ssid, password);
     while(WiFi.status() != WL_CONNECTED)
